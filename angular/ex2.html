@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body ng-app='myApp' ng-controller='MyCont'>
+
+	<form name="itemForm" ng-submit="adddata(item)">
+		<input type="text" name="name" required="" ng-model="item.name">
+		<br><br>
+		<input type="number" name="price" required="" ng-model="item.price">
+		<br><br>
+		<button ng-disabled="itemForm.$invalid">Add</button>
+	</form>
+
+	<input type="text" name="" ng-model="search">
+	<table border="1" width="400px">
+		<tr>
+			<td>No</td>
+			<td>Name</td>
+			<td>Price</td>
+			<td>Delete</td>
+		</tr>
+		<tr ng-repeat="it in data | filter:search">
+			<td>{{$index + 1}}</td>
+			<td>{{it.name}}</td>
+			<td>{{it.price}}</td>
+			<td><button ng-click="deletedata(id)">Delete</button></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		app=angular.module('myApp',[]);
+		app.controller('MyCont',function($scope)
+		{
+			$scope.data=[];
+
+			$scope.adddata=function(data) {
+				$scope.data.push({name:data.name,price:data.price});
+			}
+
+			$scope.deletedata=function(id){
+				$scope.data.splice(id,1)
+			}
+		})
+	</script>
+</body>
+</html>

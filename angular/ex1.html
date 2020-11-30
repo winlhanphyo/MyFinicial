@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body ng-app='myApp' ng-controller='MyCont'>
+	<!-- <input type="text" name="" ng-model='name'>{{name}}
+	<h1 ng-bind='name'></h1> -->
+
+	<form name="form">
+		<input type="email" name="name" placeholder="Name" ng-model='name' required=""><br>
+
+		<input type="password" name="password" placeholder="Password" ng-model='password' required="" min="6"><br>
+
+		<button ng-disabled="form.$invalid">Submit</button>
+		<!-- ng-show,ng-hide,ng-if,ng-class -->
+
+	</form>
+
+	<script type="text/javascript">
+		app=angular.module('myApp',[]);
+		app.controller('MyCont',function($scope)
+		{
+			$scope.name="Aung Aung";
+		})
+	</script>
+</body>
+</html>

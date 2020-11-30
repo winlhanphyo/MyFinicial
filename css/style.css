@@ -1,0 +1,37 @@
+body {
+  background-color: #b8dacc;
+}
+#main {
+  position: relative;
+  overflow-x: auto;
+}
+#main > .container button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#myTable > thead tr th {
+  background: white;
+  text-align: left;
+}
+
+#myTable > tbody tr td {
+  padding-left: 20px;
+}
+
+#myTable > tbody tr:nth-child(odd) {
+  background-color: lightblue;
+}
+
+#mymodal .modal-dialog {
+  /*width: 70%;*/
+  width: 320px;
+  margin: auto;
+}
+
+#mymodal .modal-header {
+  background-color: #337ab7;
+  padding: 16px 16px;
+  color: #fff;
+  border-bottom: 2px dashed #337ab7;
+}
